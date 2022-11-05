@@ -1,0 +1,58 @@
+name: Release
+on:
+  workflow_dispatch:
+
+jobs:
+  create_release:
+    name: Create branch
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Create relese
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'release'
+  pruebas:
+    name: Pruebas
+    needs: create_release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout de repositorio
+      uses: actions/checkout@v2
+      with:
+        ref: release
+    - name: Configuración de entorno de python
+      uses: actions/setup-python@v2
+      with:
+          python-version: '3.7'
+    - name: Instalación de librerías y dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Correr pruebas
+      id: correr-pruebas
+      run: python -m unittest discover -s tests -v
+    - name: Cálculo de cubrimiento
+      id: cubrimiento
+      run: |
+          coverage run -m unittest discover -s tests -v
+          coverage report -m
+  merge-branch:
+      runs-on: ubuntu-latest
+      needs: pruebas
+      steps:
+        - uses: actions/checkout@v2
+          with:
+            ref: release
+        - uses: everlytic/branch-merge@1.1.0
+          with:
+            github_token: ${{ github.token }}
+            source_ref: 'release'
+            target_branch: 'main'
+            commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+        - uses: dawidd6/action-delete-branch@v3
+          with:
+            github_token: ${{github.token}}
+            branches: release
