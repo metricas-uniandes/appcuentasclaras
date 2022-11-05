@@ -242,3 +242,43 @@ class Logica():
 
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
+
+    def editar_gasto1(self, indice, actividad, concepto, fecha, valor, nombreViajero, apellidoViajero):
+        viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
+        if len(viajero) == 0:
+            return False
+
+        actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
+        return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
+
+    def editar_gasto2(self, indice, actividad, concepto, fecha, valor, nombreViajero, apellidoViajero):
+        viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
+        if len(viajero) == 0:
+            return False
+
+        actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
+        return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
+
+    def editar_gasto3(self, indice, actividad, concepto, fecha, valor, nombreViajero, apellidoViajero):
+        viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
+        if len(viajero) == 0:
+            return False
+
+        actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
+        return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
+
+    def editar_gasto4(self, indice, actividad, concepto, fecha, valor, nombreViajero, apellidoViajero):
+        viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
+        if len(viajero) == 0:
+            return False
+
+        actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
+        return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
+
+    def editar_gasto5(self, indice, actividad, concepto, fecha, valor, nombreViajero, apellidoViajero):
+        viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
+        if len(viajero) == 0:
+            return False
+
+        actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
+        return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
