@@ -231,7 +231,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.agregar_gasto(self.session, concepto, fecha, valor, viajero[0])
 
@@ -239,7 +238,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
 
@@ -247,7 +245,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
 
@@ -255,7 +252,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
 
@@ -263,7 +259,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
 
@@ -271,7 +266,6 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
 
@@ -279,6 +273,5 @@ class Logica():
         viajero = Viajero.buscar_viajero_por_nombre_apellido(self.session, nombreViajero, apellidoViajero)
         if len(viajero) == 0:
             return False
-
         actividad = Actividad.buscar_actividad_por_nombre(self.session, actividad)
         return actividad.actualizar_gasto(self.session, indice, concepto, fecha, valor, viajero[0])
