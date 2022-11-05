@@ -28,7 +28,7 @@ jobs:
           python -m coverage xml -i 
       - name: fix code coverage paths
         run: |
-          sed -i 's/\/home\/runner\/work\/cuentasclaras\/cuentasclaras\//\/github\/workspace\//g' coverage.xml
+          sed -i 's/\/home\/runner\/work\/appcuentasclaras\/appcuentasclaras\//\/github\/workspace\//g' coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
